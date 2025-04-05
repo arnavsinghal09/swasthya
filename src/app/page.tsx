@@ -1,103 +1,140 @@
-import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import Link from "next/link";
+import { ArrowRight, FileText, PieChart, Stethoscope } from "lucide-react";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <main className="container mx-auto px-4 py-8">
+      <section className="py-12 md:py-24 lg:py-32 flex flex-col items-center text-center">
+        <div className="space-y-4 max-w-3xl">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-teal-700">
+            Understand Your Prescriptions with MedLingua
+          </h1>
+          <p className="text-xl text-gray-600 max-w-[700px] mx-auto">
+            Breaking down complex medical jargon into simple, personalized
+            explanations you can understand and act on.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center pt-6">
+            <Button asChild size="lg" className="bg-teal-600 hover:bg-teal-700">
+              <Link href="/upload">
+                Get Started <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </Button>
+            <Button asChild variant="outline" size="lg">
+              <Link href="#how-it-works">Learn More</Link>
+            </Button>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      </section>
+
+      <section id="how-it-works" className="py-16 space-y-12">
+        <div className="text-center space-y-4">
+          <h2 className="text-3xl font-bold text-teal-700">
+            How MedLingua Works
+          </h2>
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            Our AI-powered platform simplifies your medical information in three
+            easy steps
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <Card className="border-teal-100">
+            <CardHeader className="text-center">
+              <div className="mx-auto bg-teal-50 p-3 rounded-full w-16 h-16 flex items-center justify-center">
+                <FileText className="h-8 w-8 text-teal-600" />
+              </div>
+              <CardTitle className="mt-4">Upload Prescription</CardTitle>
+            </CardHeader>
+            <CardContent className="text-center text-gray-600">
+              Upload your prescription as a PDF or image, or record a voice note
+              describing it.
+            </CardContent>
+          </Card>
+
+          <Card className="border-teal-100">
+            <CardHeader className="text-center">
+              <div className="mx-auto bg-teal-50 p-3 rounded-full w-16 h-16 flex items-center justify-center">
+                <Stethoscope className="h-8 w-8 text-teal-600" />
+              </div>
+              <CardTitle className="mt-4">AI Analysis</CardTitle>
+            </CardHeader>
+            <CardContent className="text-center text-gray-600">
+              Our AI analyzes your prescription and breaks down complex medical
+              terms.
+            </CardContent>
+          </Card>
+
+          <Card className="border-teal-100">
+            <CardHeader className="text-center">
+              <div className="mx-auto bg-teal-50 p-3 rounded-full w-16 h-16 flex items-center justify-center">
+                <PieChart className="h-8 w-8 text-teal-600" />
+              </div>
+              <CardTitle className="mt-4">Simplified Results</CardTitle>
+            </CardHeader>
+            <CardContent className="text-center text-gray-600">
+              Get easy-to-understand explanations and visualizations of your
+              medical information.
+            </CardContent>
+          </Card>
+        </div>
+
+        <div className="text-center pt-8">
+          <Button asChild size="lg" className="bg-teal-600 hover:bg-teal-700">
+            <Link href="/upload">
+              Try It Now <ArrowRight className="ml-2 h-4 w-4" />
+            </Link>
+          </Button>
+        </div>
+      </section>
+
+      <section className="py-16 bg-teal-50 rounded-xl p-8">
+        <div className="text-center space-y-4 mb-12">
+          <h2 className="text-3xl font-bold text-teal-700">
+            Why Choose MedLingua
+          </h2>
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            Designed to bridge the communication gap between healthcare
+            providers and patients
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="space-y-3">
+            <h3 className="text-xl font-semibold text-teal-700">
+              Simple Language
+            </h3>
+            <p className="text-gray-600">
+              Medical terms translated into everyday language you can
+              understand.
+            </p>
+          </div>
+          <div className="space-y-3">
+            <h3 className="text-xl font-semibold text-teal-700">
+              Personalized
+            </h3>
+            <p className="text-gray-600">
+              Explanations tailored to your specific prescriptions and medical
+              history.
+            </p>
+          </div>
+          <div className="space-y-3">
+            <h3 className="text-xl font-semibold text-teal-700">Accessible</h3>
+            <p className="text-gray-600">
+              Designed for everyone, including read-aloud features for visual
+              impairments.
+            </p>
+          </div>
+          <div className="space-y-3">
+            <h3 className="text-xl font-semibold text-teal-700">Secure</h3>
+            <p className="text-gray-600">
+              Your medical data is encrypted and handled with the highest
+              security standards.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
   );
 }
