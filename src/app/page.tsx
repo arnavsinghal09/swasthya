@@ -8,7 +8,7 @@ import Image from "next/image";
 
 import Carousel from "@/components/ui/carousel";
 
-export function CarouselDemo() {
+function CarouselDemo() {
   const slideData = [
     {
       title: "Healthcare Revolution",
