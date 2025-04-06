@@ -4,6 +4,35 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import Link from "next/link";
 import { ArrowRight, FileText, PieChart, Stethoscope } from "lucide-react";
 import { useEffect, useState } from "react";
+import Image from "next/image";
+
+import Carousel from "@/components/ui/carousel";
+
+export function CarouselDemo() {
+  const slideData = [
+    {
+      title: "Healthcare Revolution",
+      src: "https://mun-website-images.s3.ap-south-1.amazonaws.com/swasthya/image1.jpg",
+    },
+    {
+      title: "AI Analysis",
+      src: "https://mun-website-images.s3.ap-south-1.amazonaws.com/swasthya/image2.jpg",
+    },
+    {
+      title: "Understanding Prescriptions",
+      src: "https://mun-website-images.s3.ap-south-1.amazonaws.com/swasthya/image3.jpg",
+    },
+    {
+      title: "Reminders and Alerts",
+      src: "https://mun-website-images.s3.ap-south-1.amazonaws.com/swasthya/image4.jpg",
+    },
+  ];
+  return (
+    <div className="relative overflow-hidden w-full h-full py-20">
+      <Carousel slides={slideData} />
+    </div>
+  );
+}
 
 export default function Home() {
   const [isVisible, setIsVisible] = useState({
@@ -61,7 +90,18 @@ export default function Home() {
         .fade-in.visible {
           animation: fadeInUp 0.6s forwards;
         }
-
+        .fade-in.visible.delay-1 {
+          animation: fadeInUp 0.6s forwards;
+          animation-delay: 0.1s;
+        }
+        .fade-in.visible.delay-2 {
+          animation: fadeInUp 0.6s forwards;
+          animation-delay: 0.3s;
+        }
+        .fade-in.visible.delay-3 {
+          animation: fadeInUp 0.6s forwards;
+          animation-delay: 0.5s;
+        }
         .stagger-item {
           opacity: 0;
           transform: translateY(20px);
@@ -109,8 +149,20 @@ export default function Home() {
         }
       `}</style>
 
-      <section className="py-12 md:py-24 lg:py-32 flex flex-col items-center text-center">
-        <div className="space-y-4 max-w-3xl">
+      <section className="relative w-full py-12 md:py-24 lg:py-32 flex items-center justify-center text-center overflow-hidden">
+        {/* Background Image */}
+        {/* <Image
+          src="https://mun-website-images.s3.ap-south-1.amazonaws.com/swasthya/image1.jpg"
+          className="absolute inset-0 object-cover object-center z-0 rounded-lg"
+          alt="Healthcare Background"
+          fill
+          priority
+        /> */}
+
+        {/* White Frosted Glass Overlay */}
+        <div className="absolute inset-0  bg-opacity-70 backdrop-blur-md z-10"></div>
+        {/* Hero Content */}
+        <div className="relative z-20 space-y-4 max-w-3xl px-4">
           <h1
             className={`fade-in text-4xl md:text-5xl lg:text-6xl font-bold text-teal-700 ${
               isVisible.hero ? "visible" : ""
@@ -153,7 +205,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-
+      <CarouselDemo />
       <section id="how-it-works" className="py-16 space-y-12">
         <div className="text-center space-y-4">
           <h2
