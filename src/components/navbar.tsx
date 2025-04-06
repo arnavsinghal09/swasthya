@@ -29,10 +29,10 @@ export function Navbar() {
           <Link href="/" className="flex items-center gap-2">
             <div className="relative h-8 w-8">
               <div className="absolute inset-0 flex items-center justify-center bg-teal-600 rounded-md">
-                <span className="text-white font-bold">M</span>
+                <span className="text-white font-bold">S</span>
               </div>
             </div>
-            <span className="text-xl font-bold text-teal-700">MedLingua</span>
+            <span className="text-xl font-bold text-teal-700">Swasthya</span>
           </Link>
         </div>
 

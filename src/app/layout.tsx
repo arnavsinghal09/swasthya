@@ -8,7 +8,7 @@ import type { Metadata } from "next";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "MedLingua - Simplify Your Medical Prescriptions",
+  title: "Swasthya - Simplify Your Medical Prescriptions",
   description:
     "Breaking down complex medical jargon into simple, personalized explanations.",
 };

@@ -9,10 +9,10 @@ export function Footer() {
             <div className="flex items-center gap-2">
               <div className="relative h-8 w-8">
                 <div className="absolute inset-0 flex items-center justify-center bg-teal-600 rounded-md">
-                  <span className="text-white font-bold">M</span>
+                  <span className="text-white font-bold">S</span>
                 </div>
               </div>
-              <span className="text-xl font-bold text-teal-700">MedLingua</span>
+              <span className="text-xl font-bold text-teal-700">Swastya</span>
             </div>
             <p className="text-sm text-gray-500">
               Breaking down complex medical jargon into simple, personalized
@@ -90,15 +90,15 @@ export function Footer() {
 
           <div>
             <h3 className="font-medium text-sm mb-4">Contact</h3>
-            <ul className="space-y-2">
+            {/* <ul className="space-y-2">
               <li className="text-sm text-gray-500">support@medilingua.com</li>
               <li className="text-sm text-gray-500">1-800-MED-LING</li>
-            </ul>
+            </ul> */}
           </div>
         </div>
 
         <div className="mt-8 pt-8 border-t text-center text-sm text-gray-500">
-          <p>© {new Date().getFullYear()} MedLingua. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Swasthya. All rights reserved.</p>
         </div>
       </div>
     </footer>

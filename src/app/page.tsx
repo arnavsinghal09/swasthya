@@ -9,7 +9,7 @@ export default function Home() {
       <section className="py-12 md:py-24 lg:py-32 flex flex-col items-center text-center">
         <div className="space-y-4 max-w-3xl">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-teal-700">
-            Understand Your Prescriptions with MedLingua
+            Understand Your Prescriptions with Swasthya
           </h1>
           <p className="text-xl text-gray-600 max-w-[700px] mx-auto">
             Breaking down complex medical jargon into simple, personalized
@@ -31,7 +31,7 @@ export default function Home() {
       <section id="how-it-works" className="py-16 space-y-12">
         <div className="text-center space-y-4">
           <h2 className="text-3xl font-bold text-teal-700">
-            How MedLingua Works
+            How Swasthya Works
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             Our AI-powered platform simplifies your medical information in three
@@ -92,7 +92,7 @@ export default function Home() {
       <section className="py-16 bg-teal-50 rounded-xl p-8">
         <div className="text-center space-y-4 mb-12">
           <h2 className="text-3xl font-bold text-teal-700">
-            Why Choose MedLingua
+            Why Choose Swasthya
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             Designed to bridge the communication gap between healthcare
